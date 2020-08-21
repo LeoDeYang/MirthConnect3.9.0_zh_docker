@@ -4,7 +4,11 @@ mc官网：http://www.mirthcorp.com/community/issues/browse/MIRTH
 mc官网文档：http://www.mirthcorp.com/community/wiki/display/mirth/Getting+Started+Guide  
 mc社区，可注册账号浏览：https://forums.mirthproject.io/  
 mc最新版下载地址：http://downloads.mirthcorp.com/archive/connect/3.9.0.b2526/  
-本仓库只是展示镜像制作与使用。需要使用镜像可到Dockerhub 和  阿里云镜像中  搜索mirthconnect3.9.0关键字拉取使用。
+本仓库只是展示镜像制作与使用。需要使用镜像可到Dockerhub 和  阿里云镜像中  搜索mirthconnect3.9.0关键字拉取使用。  
+
+
+
+=================================================================    
 
 
 Dockerfile文件：解读  
@@ -23,11 +27,12 @@ WORKDIR $MYPATH  
 
 EXPOSE 8080 8443    
 # 容器启动时打印一下工作目录并运行mc服务端  
-CMD echo $MYPATH && java -jar mirth-server-launcher.jar && /bin/bash    
+CMD echo $MYPATH && java -jar mirth-server-launcher.jar && /bin/bash  
+
+=================================================================  
 
 
 
-=================================================================
 #启动方式一：不向宿主机共享任何目录   
 # docker run -it -p 8080:8080 -p 8443:8443 --name 容器名 镜像名:版本号    
 # docker run -it -p 8080:8080 -p 8443:8443 --name mc01 mirthconnect3.9.0_zh:1.0      
