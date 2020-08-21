@@ -23,10 +23,12 @@ WORKDIR $MYPATH  
 
 EXPOSE 8080 8443    
 # 容器启动时打印一下工作目录并运行mc服务端  
-CMD echo $MYPATH && java -jar mirth-server-launcher.jar && /bin/bash  
+CMD echo $MYPATH && java -jar mirth-server-launcher.jar && /bin/bash    
 
 
-# 启动方式一：不向宿主机共享任何目录    
+
+=================================================================
+#启动方式一：不向宿主机共享任何目录   
 # docker run -it -p 8080:8080 -p 8443:8443 --name 容器名 镜像名:版本号    
 # docker run -it -p 8080:8080 -p 8443:8443 --name mc01 mirthconnect3.9.0_zh:1.0      
 docker run -d -p 8080:8080 -p 8443:8443 --name mc01 mirthconnect3.9.0_zh:1.0   
